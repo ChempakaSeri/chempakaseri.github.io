@@ -13,7 +13,8 @@
 
 <body>
     <header>
-        <button class="btn btn-white btn-share ml-auto mr-3 ml-md-0 mr-md-auto"><img src="assets/images/share.svg" alt="share" class="btn-img">
+        <input type="hidden" value="https://chempakaseri.github.io/" id="myInput">
+        <button class="btn btn-white btn-share ml-auto mr-3 ml-md-0 mr-md-auto" onclick="copyText()"><img src="assets/images/share.svg" alt="share" class="btn-img">
             SHARE</button>
         <nav class="collapsible-nav" id="collapsible-nav">
             <a href="index.html" class="nav-link active">HOME</a>
@@ -43,11 +44,11 @@
             <div class="widget">
                 <h5 class="widget-title">personal information</h5>
                 <div class="widget-content">
-                    <p>WEBSITE : www.chempakaseri.com</p>
+                    <!-- <p>WEBSITE : www.chempakaseri.com</p> -->
                     <p>MAIL : chempakaseri96@gmail.com</p>
                     <p>LOCATION : Selangor, MY</p>
-                    <button class="btn btn-download-cv btn-darkblue rounded-pill" href="assets/ChempakaSeri_CV.pdf" download> <img src="assets/images/download.svg" alt="download"
-                        class="btn-img">DOWNLOAD CV </button>
+                    <button class="btn btn-download-cv btn-darkblue rounded-pill"> <a href="assets/ChempakaSeri_CV.pdf" download><img src="assets/images/download.svg" alt="download"
+                        class="btn-img">DOWNLOAD CV </a></button>
                 </div>
 
             </div>
@@ -245,6 +246,16 @@
     <script src="assets/vendors/@popperjs/core/dist/umd/popper-base.min.js"></script>
     <script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/js/live-resume.js"></script>
+
+    <script>
+        function copyText() {
+          var copyText = document.getElementById("myInput");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999)
+          document.execCommand("copy");
+          alert("Copied the text: " + copyText.value);
+        }
+    </script>
 </body>
 
 </html>
